@@ -1,0 +1,27 @@
+<div>
+    <h2 class="beautiful">
+      — Ranking de mejores historias
+      <br>
+      <hr>
+    </h2>
+    <div>
+      <table class="table table-rounded table-row-bordered border gy-7 gs-7">
+          <thead>
+              <tr class="fw-semibold fs-6 text-gray-800 border-bottom-2 border-gray-200 beautiful">
+                  <th class="beautiful">Posición</th>
+                  <th class="beautiful">Título</th>
+                  <th class="beautiful">Puntuación total</th>
+                  <th class="beautiful">Ver</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let history of histories; let i = index">
+                  <td class="beautiful">{{ i + 1 }}</td>
+                  <td class="beautiful">{{ history.title }}</td>
+                  <td class="beautiful">{{ history.punctuation }}</td>
+                  <td><a routerLink="#" class="btn btn-primary beautiful" routerLink="/see-histories/{{ history.id }}/{{ userId }}">Ver</a></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

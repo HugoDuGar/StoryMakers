@@ -1,0 +1,84 @@
+<br>
+<br>
+<div style="display: flex; justify-content: center;">
+    <div class="card book-border" style="width: 45rem">
+        <h1 class="beautiful"> — Crea una historia para tu evento — </h1>
+        <hr>
+        <div class="card-body">
+            <form (submit)="addHistoryForEvent($event)" [formGroup]="eventForm">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Título</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="title" name="title"
+                            placeholder="Título de tu historia" formControlName="title">
+                        <div
+                            *ngIf="eventForm.get('title').invalid && (eventForm.get('title').dirty || eventForm.get('title').touched)">
+                            <small class="text-danger">El título es requerido</small>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Descripción</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" type="text" id="description_history" name="description_history"
+                            rows="6" placeholder="La trama de tu historia" formControlName="description"></textarea>
+                        <div
+                            *ngIf="eventForm.get('description').invalid && (eventForm.get('description').dirty || eventForm.get('description').touched)">
+                            <small class="text-danger">La descripción debe tener al menos 50 caracteres</small>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Categoría</label>
+                    <select class="form-control" id="category" name="category" formControlName="category">
+                        <option class="beautiful" value="">Selecciona una</option>
+                        <option class="beautiful" value="Acción">Acción</option>
+                        <option class="beautiful" value="Aventura">Aventura</option>
+                        <option class="beautiful" value="Ciencia ficción">Ciencia ficción</option>
+                        <option class="beautiful" value="Fantasía">Fantasía</option>
+                        <option class="beautiful" value="Fanfic">Fanfic</option>
+                        <option class="beautiful" value="Historia corta">Historia corta</option>
+                        <option class="beautiful" value="Comedia">Comedia</option>
+                        <option class="beautiful" value="Romance">Romance</option>
+                        <option class="beautiful" value="Terror">Terror</option>
+                        <option class="beautiful" value="Paranormal">Paranormal</option>
+                        <option class="beautiful" value="Misterio">Misterio</option>
+                        <option class="beautiful" value="Un poco de todo">Un poco de todo</option>
+                    </select>
+                    <div
+                        *ngIf="eventForm.get('category').invalid && (eventForm.get('category').dirty || eventForm.get('category').touched)">
+                        <small class="text-danger">Debes seleccionar una categoría</small>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Audiencia principal</label>
+                    <select class="form-control" id="audience" name="audience" formControlName="audience">
+                        <option class="beautiful" value="">Selecciona una</option>
+                        <option class="beautiful" value="Juvenil (13-18 años)">Juvenil (13-18 años)</option>
+                        <option class="beautiful" value="Jovenes adultos (18-24 años)">Jóvenes adultos (18-24 años)</option>
+                        <option class="beautiful" value="Adultos (25 años en adelante)">Adultos (25 años en adelante)</option>
+                    </select>
+                    <div
+                        *ngIf="eventForm.get('audience').invalid && (eventForm.get('audience').dirty || eventForm.get('audience').touched)">
+                        <small class="text-danger">Debes seleccionar una audiencia principal</small>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button type="submit" class="btn btn-primary beautiful" [disabled]="eventForm.invalid">Manda tu
+                            historia</button>
+                        <button type="button" class="btn btn-secondary beautiful" (click)="goBack()">Atrás</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

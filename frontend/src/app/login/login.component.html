@@ -1,0 +1,48 @@
+<div class="px-3 py-2 bg-dark text-white" style="margin-bottom: 15px;">
+  <h1 class="my-heading">
+    ~~ºStory Makersº~~
+    <hr class="golden-hr">
+  </h1>
+</div>
+<br>
+<br>
+<div style="display: flex; justify-content: center;">
+  <div class="card book-border" style="width: 20rem">
+    <h1 class="beautiful">Inicio de sesión</h1>
+    <hr>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label beautiful">E-mail</label>
+          <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
+          <div
+            *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+            <small class="text-danger">Ingrese un correo electrónico válido</small>
+          </div>
+          <div id="emailHelp" class="form-text beautiful">Nunca compartiremos su correo electrónico con nadie más.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label beautiful">Contraseña</label>
+          <input type="password" class="form-control" formControlName="password">
+          <div
+            *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+            <small class="text-danger">La contraseña es requerida</small>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary beautiful" [disabled]="!loginForm.valid">Iniciar sesión</button>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<hr>
+<div class="container d-flex flex-wrap justify-content-center">
+  <div class="text-center">
+    <h6 class="beautiful">
+      ¿No tienes cuenta? ¡Registrate! ¿Ya tienes cuenta? ¡Vamos, entra!
+    </h6>
+    <button type="button" class="btn btn-light text-dark me-2 beautiful" routerLink="/login">Iniciar sesión</button>
+    <button type="button" class="btn btn-primary beautiful" routerLink="/register">Registrarse</button>
+  </div>
+</div>

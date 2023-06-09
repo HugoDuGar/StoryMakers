@@ -1,0 +1,26 @@
+.my-heading {
+    font-family: Candara, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    -webkit-text-stroke: 2px gold;
+    color: transparent;
+}
+
+hr.golden-hr {
+    border: none;
+    border-top: 1px solid gold;
+    height: 1px;
+    background-color: gold;
+}
+
+.beautiful {
+    font-family: Candara, sans-serif;
+}
+
+.book-border {
+    width: 20rem;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 0 10px #ccc, 0 0 0 15px white, 0 0 0 20px #ccc, 0 0 0 25px white;
+    border-radius: 10px;
+}

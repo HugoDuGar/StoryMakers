@@ -1,0 +1,15 @@
+<br>
+<br>
+<div style="display: flex; justify-content: center;">
+    <div class="card book-border" style="width: 45rem">
+        <div class="card-header beautiful">
+            <h1> — Capítulo {{ chapter.number }} — </h1>
+        </div>
+        <div class="card-body">
+            <div [innerHTML]="editorContent"></div>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-secondary beautiful" (click)="goBack()">Atrás</button>
+        </div>
+    </div>
+</div>

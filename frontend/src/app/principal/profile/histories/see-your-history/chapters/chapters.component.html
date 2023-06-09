@@ -1,0 +1,48 @@
+<br>
+<br>
+<div style="display: flex; justify-content: center;">
+  <div class="card book-border" style="width: 50rem">
+    <h1 class="beautiful"> — Crea tu capítulo — </h1>
+    <hr>
+    <div class="card-body">
+      <form (submit)="addChapter($event)" [formGroup]="chapterForm">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label beautiful">Título</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Título que llevará el capítulo"
+              formControlName="title">
+            <div
+              *ngIf="chapterForm.get('title').invalid && (chapterForm.get('title').dirty || chapterForm.get('title').touched)">
+              <small class="text-danger">El título es requerido</small>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label beautiful">Capítulo</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="number" name="number" placeholder="1, 2, 3... Primero, segundo, tercero... One-shot, capítulo único, piloto..."
+              formControlName="number">
+            <div
+              *ngIf="chapterForm.get('number').invalid && (chapterForm.get('number').dirty || chapterForm.get('number').touched)">
+              <small class="text-danger">El número de capítulo es requerido</small>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div id="editor-container"></div>
+        <br>
+        <br>
+        <div class="form-group row">
+          <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary beautiful" [disabled]="!chapterForm.valid">Listo</button>
+            <button type="button" class="btn btn-secondary beautiful" (click)="goBack()">Atrás</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

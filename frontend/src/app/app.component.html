@@ -1,0 +1,60 @@
+<router-outlet>
+  <ng-container *ngIf="router.url !== '/login' && router.url !== '/register'">
+    <div class="px-3 py-2 bg-dark text-white">
+        <h1 class="my-heading">
+          Story Makers
+          <hr class="golden-hr">
+        </h1>
+        <br>
+          <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
+            <label><h1 class="my-heading">Tu lugar para escribir y desatar tu imaginación</h1></label>
+            <hr class="golden-hr">
+          </form>
+          <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+              <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                <li>
+                  <a href="/principal" class="nav-link text-white nav-link-border">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                    </svg>
+                    Inicio <span class="fa fa-home"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/events" class="nav-link text-white nav-link-border">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"></use></svg>
+                    Eventos <span class="fa fa-calendar"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/profile" class="nav-link text-white nav-link-border">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"></use></svg>
+                    Perfil <span class="fa fa-user"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/rankings" class="nav-link text-white nav-link-border">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"></use></svg>
+                    Rankings <span class="fa fa-star fa-lg"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+    </div>
+  </ng-container>
+</router-outlet>
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-muted">© 2023 Story Makers</span>
+    </div>
+</footer>
+
+

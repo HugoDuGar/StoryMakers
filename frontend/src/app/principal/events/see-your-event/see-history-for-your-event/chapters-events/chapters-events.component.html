@@ -1,0 +1,47 @@
+<br>
+<br>
+<div style="display: flex; justify-content: center;">
+    <div class="card book-border" style="width: 50rem">
+        <h1 class="beautiful"> — Crea tu capítulo — </h1>
+        <hr>
+        <div class="card-body">
+            <form (submit)="addChapter($event)" [formGroup]="chapterEventForm">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Título</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="title" name="title"
+                            placeholder="Título que llevará el capítulo" formControlName="title">
+                        <div
+                            *ngIf="chapterEventForm.get('title').invalid && (chapterEventForm.get('title').dirty || chapterEventForm.get('title').touched)">
+                            <small class="text-danger">El título es requerido</small>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Capítulo</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="number" name="number"
+                            placeholder="¿Qué número de capítulo?" formControlName="number">
+                        <div
+                            *ngIf="chapterEventForm.get('number').invalid && (chapterEventForm.get('number').dirty || chapterEventForm.get('number').touched)">
+                            <small class="text-danger">El número de capítulo es requerido</small>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div id="editor-container"></div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button type="submit" class="btn btn-primary beautiful" [disabled]="!chapterEventForm.valid">Listo</button>
+                        <button type="button" class="btn btn-secondary beautiful" (click)="goBack()">Atrás</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

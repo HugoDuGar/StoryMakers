@@ -1,0 +1,58 @@
+<br>
+<br>
+<div style="display: flex; justify-content: center;">
+    <div class="card book-border" style="width: 45rem">
+        <h1 class="beautiful"> — Tu perfil — </h1>
+        <hr>
+        <div class="card-body">
+            <form (submit)="updateUser($event)" enctype="multipart/form-data">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Nombre de usuario</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nombre de perfil" [value]="user.name">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Descripción</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" type="text" id="description" name="description" rows="6" placeholder="Tu descripción como usuario" [value]="user.description"></textarea>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Edad</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="age" name="age" placeholder="Tu edad" [value]="user.age">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Generos</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="genders" name="genders" placeholder="Generos de historias que te gustan" [value]="user.genders">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Nacionalidad</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nationality" name="nationality" placeholder="País de origen" [value]="user.nationality">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                      <button type="submit" class="btn btn-primary beautiful">Actualizar</button>
+                      <button type="submit" class="btn btn-secondary beautiful" (click)="goBack()">Atrás</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

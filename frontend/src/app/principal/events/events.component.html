@@ -1,0 +1,23 @@
+<div>
+    <h2 class="beautiful">
+      — Eventos
+      <button *ngIf="user.role === 'admin'" class="btn btn-primary" routerLink="/events-form">Crear un evento</button>
+      <br>
+      <hr>
+    </h2>
+</div>
+<div *ngIf="events.length > 0" class="card-container">
+  <div class="card book-border" style="width: 18rem; display: inline-flex; max-width: 50%;" *ngFor="let e of events">
+    <img class="card-img-top" src="/assets/evento.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title beautiful" style="max-height: 3.2em; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{ e.name_event }}</h5>
+      <p class="card-text beautiful" style="max-height: 3.2em; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{ e.description }}</p>
+    </div>
+    <div class="card-body">
+      <a href="/see-event/{{ e.id }}/{{ userId }}" class="card-link">Ver más...</a>
+      <br>
+      <h6 *ngIf="e.close === 'Si'" class="beautiful">Este evento está cerrado</h6>
+    </div>
+  </div>
+</div>
+

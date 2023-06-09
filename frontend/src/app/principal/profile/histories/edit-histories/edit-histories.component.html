@@ -1,0 +1,65 @@
+<br>
+<br>
+<div style="display: flex; justify-content: center;">
+    <div class="card book-border" style="width: 45rem">
+        <h1 class="beautiful"> — Edita aqui tu historia — </h1>
+        <hr>
+        <div class="card-body">
+            <form (submit)="updateHistory($event)">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Título</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Título de tu historia" [value]="history.title">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Descripción</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" type="text" id="description_history" name="description_history" rows="6" placeholder="La trama de tu historia" [value]="history.description"></textarea>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Categoría</label>
+                    <select class="form-control" id="category" name="category">
+                        <option class="beautiful">{{ history.category }}</option>
+                        <option class="beautiful">Acción</option>
+                        <option class="beautiful">Aventura</option>
+                        <option class="beautiful">Ciencia ficción</option>
+                        <option class="beautiful">Fantasía</option>
+                        <option class="beautiful">Fanfic</option>
+                        <option class="beautiful">Historia corta</option>
+                        <option class="beautiful">Comedia</option>
+                        <option class="beautiful">Romance</option>
+                        <option class="beautiful">Terror</option>
+                        <option class="beautiful">Paranormal</option>
+                        <option class="beautiful">Misterio</option>
+                        <option class="beautiful">Un poco de todo</option>
+                    </select>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label beautiful">Audiencia principal</label>
+                    <select class="form-control" id="audience" name="audience">
+                        <option class="beautiful">{{ history.audience }}</option>
+                        <option class="beautiful">Juvenil (13-18 años)</option>
+                        <option class="beautiful">Jovenes adultos (18-24 años)</option>
+                        <option class="beautiful">Adultos (25 años en adelante)</option>
+                    </select>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                      <button type="submit" class="btn btn-primary beautiful">Comienza a escribir</button>
+                      <button type="submit" class="btn btn-secondary beautiful" (click)="goBack()">Atrás</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

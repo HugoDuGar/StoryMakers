@@ -1,0 +1,12 @@
+.beautiful {
+    font-family: Candara, sans-serif;
+}
+
+.book-border {
+    width: 1rem;
+    padding: 5px;
+    margin: 17px 15px 30px 33px;
+    background-color: white;
+    box-shadow: 0 0 0 10px #ccc, 0 0 0 15px white, 0 0 0 20px #ccc, 0 0 0 25px white;
+    border-radius: 5px;
+}

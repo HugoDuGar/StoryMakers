@@ -1,0 +1,69 @@
+<section class="section about-section gray-bg" id="about">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-lg-6">
+                <div class="about-text go-to">
+                    <h3 class="dark-color beautiful">{{ history.title }}</h3>
+                    <h6 class="theme-color lead beautiful">{{ history.description }}</h6>
+                    <div class="row about-list">
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label class="beautiful">Categoria</label>
+                                <p class="beautiful">{{ history.category }}</p>
+                            </div>
+                            <div class="media">
+                                <label class="beautiful">Audiencia principal</label>
+                                <p class="beautiful">{{ history.audience }}</p>
+                            </div>
+                            <div class="media">
+                                <label class="beautiful">Numero de capítulos</label>
+                                <p class="beautiful">{{ chaptersEvent.length }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label class="beautiful">Autor</label>
+                                <p class="beautiful">{{ user.name }}</p>
+                            </div>
+                            <div class="media">
+                                <button class="btn btn-danger beautiful" (click)="deleteHistory(history.id)">Eliminar historia</button>
+                                <br>
+                                <button class="btn btn-secondary beautiful" (click)="goBack()">Atrás</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-avatar">
+                    <img [src]="getImageUrl(history.category)" class="card-image" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h2 class="beautiful">
+            Capítulos
+            <button class="btn btn-primary beautiful" routerLink="/create-chapter-event/{{ history.id }}">Añadir capítulo</button>
+            <br>
+            <hr>
+        </h2>
+        <table class="table table-rounded table-row-bordered border gy-7 gs-7" *ngIf="chaptersEvent.length > 0">
+            <thead>
+                <tr class="fw-semibold fs-6 text-gray-800 border-bottom-2 border-gray-200">
+                    <th class="beautiful">Número</th>
+                    <th class="beautiful">Título</th>
+                    <th class="beautiful">Ver</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ce of chaptersEvent">
+                    <td class="beautiful">{{ ce.number }}</td>
+                    <td class="beautiful">{{ ce.title }}</td>
+                    <td><button class="btn btn-primary beautiful" routerLink="/edit-chapter-event/{{ ce.id }}">Editar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,59 @@
+<section class="section about-section gray-bg" id="about">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-lg-6">
+                <div class="about-text go-to">
+                    <h3 class="dark-color beautiful">{{ targetedEvent.name_event }}</h3>
+                    <div class="row about-list">
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label class="beautiful">¡Manda tu historia!</label>
+                                <br>
+                                <button class="btn btn-primary" [disabled]="event.close == 'Si' || history.sent == 'Si'" routerLink="/historie-for-your-event/{{ targetedEvent.event_id }}">Escribir una historia</button>
+                            </div>
+                            <div class="media">
+                                <a routerLink="#" class="btn btn-danger beautiful" *ngIf="event.close == 'No'" (click)="deleteParticipant(targetedEvent.id)">Desapuntarse</a>
+                                <a routerLink="#" class="btn btn-danger beautiful" *ngIf="event.close == 'Si'" (click)="deleteParticipant(targetedEvent.id)">Eliminar</a>
+                            </div>
+                            <div class="media">
+                                <button class="btn btn-secondary beautiful" routerLink="/profile">Atrás</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 *ngIf="event.close == 'No'" class="beautiful">¡Aquí te notificaremos de si has ganado o no!</h5>
+                            <h5 *ngIf="event.close == 'Si'" class="beautiful">Este evento ha finalizado. No podrás mandar más historias</h5>
+                            <h5 *ngIf="targetedEvent.winner_user == 'Si'" class="beautiful">¡¡Enhorabuena, eres el ganador de este evento!!</h5>
+                            <label class="winner" for="radio1" *ngIf="targetedEvent.winner_user == 'Si'">★</label>
+                            <h5 *ngIf="event.close == 'Si' && targetedEvent.winner_user == 'No'" class="beautiful">Lo sentimos, no has sido seleccionado ganador de este evento.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-avatar">
+                    <img class="card-img-top" src="/assets/evento.jpg" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h2 class="beautiful">
+            — Historia enviada
+            <br>
+            <hr>
+        </h2>
+        <div *ngIf="history.title">
+            <div class="card" style="width: 15rem; display: inline-flex; max-width: 50%;">
+                <img [src]="getImageUrl(history.category)" class="card-img-top card-image" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title beautiful">{{ history.title }}</h5>
+                    <p class="card-text beautiful" style="max-height: 3.2em; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{ history.description }}</p>
+                    <a routerLink="/edit-historie-for-your-event/{{ targetedEvent.event_id }}" class="btn btn-primary beautiful">Editar</a>
+                    <a routerLink="/see-history-for-your-event/{{ targetedEvent.event_id }}" class="btn btn-warning beautiful">Ver</a>
+                    <button class="btn btn-danger beautiful" (click)="deleteHistory(history.id)">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
