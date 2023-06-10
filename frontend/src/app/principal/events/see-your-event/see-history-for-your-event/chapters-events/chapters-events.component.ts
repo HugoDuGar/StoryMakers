@@ -76,7 +76,7 @@ export class ChaptersEventsComponent implements OnInit, AfterViewInit {
       this.http.post('http://localhost:8000/api/addChapterEvent', data).subscribe(
         (response: any) => {
           this.goBack();
-          alert('Se ha añadido un cappítulo a esta historia');
+          alert('Se ha añadido un capítulo a esta historia');
         },
         (error) => {
           alert('Ha ocurrido un error');

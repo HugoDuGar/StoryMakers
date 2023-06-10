@@ -60,17 +60,6 @@ class EventoController extends Controller
         if ($event) {
             $event->close = $request->input('close');
             $event->save();
-
-            // Verificar si han pasado más de 24 horas desde el cierre del evento
-            $closedAt = strtotime($event->close);
-            $currentTime = time();
-
-            if (($currentTime - $closedAt) >= (24 * 60 * 60)) { // 24 horas en segundos
-                $event->delete();
-                return response()->json('Evento cerrado y eliminado', 200);
-            } else {
-                return response()->json('Evento cerrado', 200);
-            }
         } else {
             return response()->json('Evento no encontrado', 404);
         }
